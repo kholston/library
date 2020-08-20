@@ -1,0 +1,8 @@
+# Sass files
+.sass-cache/
+*.css.map
+*.sass.map
+*.scss.map
+
+# Editor files
+.vscode
