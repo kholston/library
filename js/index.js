@@ -7,8 +7,9 @@ function Book(title, author, pages, read){
     this.read = read
 }
 
-function addBookToLibrary(){
-
+function addBookToLibrary(title, author, pages,read){
+    addedBook = new Book(title, author, pages,read);
+    myLibrary.push(addedBook);
 }
 
 
