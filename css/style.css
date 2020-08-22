@@ -109,9 +109,12 @@
 #bookshelf .bookCover {
   position: relative;
   padding: 10px;
-  border: 1px solid black;
   height: 100%;
   width: 70%;
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4);
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4);
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
 }
 
 .readStatus {
@@ -122,6 +125,19 @@
 }
 
 .readStatus :hover {
-  background-color: green;
+  color: green;
+}
+
+.remove-container {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  height: 20px;
+  width: 20px;
+  color: rgba(0, 0, 0, 0);
+}
+
+.remove-container :hover {
+  color: black;
 }
 /*# sourceMappingURL=style.css.map */
