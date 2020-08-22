@@ -14,16 +14,22 @@
     display: none;
 }
 
-header {
+.flex-center{
     @include flex-center();
 }
 
+.function-buttons{
+    button{
+        padding: 10px;
+    }
+}
 .container{
     width: 900px;
     margin: 0 auto;
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 50px 1fr;
+    gap: 20px;
 }
 
 #bookshelf{
@@ -45,7 +51,7 @@ header {
 .readStatus{
     position: absolute;
     right: 10px;
-    top: 5px;
+    bottom: 5px;
     padding: 2px;
 
     :hover{

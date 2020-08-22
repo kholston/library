@@ -8,7 +8,7 @@
   display: none;
 }
 
-header {
+.flex-center {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -20,6 +20,10 @@ header {
           align-items: center;
 }
 
+.function-buttons button {
+  padding: 10px;
+}
+
 .container {
   width: 900px;
   margin: 0 auto;
@@ -29,6 +33,7 @@ header {
       grid-template-columns: 1fr;
   -ms-grid-rows: 50px 1fr;
       grid-template-rows: 50px 1fr;
+  gap: 20px;
 }
 
 #bookshelf {
@@ -52,7 +57,7 @@ header {
 .readStatus {
   position: absolute;
   right: 10px;
-  top: 5px;
+  bottom: 5px;
   padding: 2px;
 }
 
