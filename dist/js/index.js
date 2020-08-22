@@ -90,10 +90,18 @@ function processInput(form){
     let bookTitle = form.title.value;
     let bookAuthor = form.author.value;
     let numOfPages = form.pageCount.value;
-    let readStatus = form.readCheck.value;
-    addBookToLibrary(bookTitle,bookAuthor,numOfPages,readStatus);
-    render();
+    form.readCheck.value == 'on'? readStatus = false : readStatus = true; 
+
+    if(bookTitle == '' || bookAuthor == '' || numOfPages == ''){
+        alert("Please fill out all fields");
+    }
+    else{
+        addBookToLibrary(bookTitle,bookAuthor,numOfPages,readStatus);
+        form.reset();
+        render();
+    }
 }
+
 
 function removeBook(bookIndex){
     bookToRemove = myLibrary[bookIndex];
