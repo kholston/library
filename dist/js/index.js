@@ -1,5 +1,8 @@
 let myLibrary = [];
 const bookshelf = document.getElementById('bookshelf');
+let bookForm = document.getElementById('form-bg');
+let openBtn = document.getElementById('addButton')
+let closeBtn = document.getElementsByClassName('close')[0];
 
 function Book(title, author, pages, read){
     this.title = title
@@ -53,6 +56,31 @@ function clearShelf(){
     while(bookshelf.firstChild){
         bookshelf.removeChild(bookshelf.firstChild);
     }
+}
+
+//Form opening and closing
+openBtn.onclick = function(){
+    bookForm.style.display = 'block';
+}
+
+closeBtn.onclick = function(){
+    bookForm.style.display = 'none';
+}
+
+window.onclick = function(event){
+    if(event.target == bookForm){
+        bookForm.style.display = 'none';
+    }
+}
+
+// Form processing
+function processInput(form){
+    let bookTitle = form.title.value;
+    let bookAuthor = form.author.value;
+    let numOfPages = form.pageCount.value;
+    let readStatus = form.readCheck.value;
+    addBookToLibrary(bookTitle,bookAuthor,numOfPages,readStatus);
+    render();
 }
 
 //inital books
