@@ -26,15 +26,18 @@ function render(){
 }
 
 function createBookCard(book, index){
+    //Create overall boock card
     bookCard = document.createElement('div');
     bookCard.setAttribute('class','bookCover');
     bookCard.setAttribute('data-book-index', `${index}`)
+    //Create book details
     bookTitle = document.createElement('h2');
     bookTitle.innerHTML = book.title;
     bookAuthor = document.createElement('h3');
     bookAuthor.innerHTML = book.author;
     bookPageCount = document.createElement('h5');
     bookPageCount.innerHTML = book.pages + ' pages';
+    //Create book card icons
     iconBox = document.createElement('div');
     iconBox.setAttribute('class', 'readStatus')
     readIcon = document.createElement('i');
@@ -48,7 +51,14 @@ function createBookCard(book, index){
         readIcon.classList.add('hidden')
     }
     iconBox.append(readIcon,unreadIcon);
-    bookCard.append(bookTitle,bookAuthor,bookPageCount,iconBox);
+    deleteBox = document.createElement('div');
+    deleteBox.setAttribute('class','remove-container')
+    deleteIcon = document.createElement('i');
+    deleteIcon.setAttribute('class','fas fa-minus-circle');
+    deleteBox.append(deleteIcon);
+    deleteBox.addEventListener('click',function(){removeBook(index)})
+    //Finalize book card creation
+    bookCard.append(bookTitle,bookAuthor,bookPageCount,iconBox, deleteBox);
     return bookCard;
 }
 
@@ -83,6 +93,13 @@ function processInput(form){
     render();
 }
 
+function removeBook(bookIndex){
+    bookToRemove = myLibrary[bookIndex];
+    if(confirm(`Are you sure you want to remove ${bookToRemove.title}?`)){
+        myLibrary.splice(bookIndex,1);
+        render();
+    }
+}
 //inital books
 
 addBookToLibrary('A Tale of Two Cities', 'Charles Dickens', 341, false);
