@@ -4,6 +4,7 @@ let bookForm = document.getElementById('form-bg');
 let openBtn = document.getElementById('addButton')
 let closeBtn = document.getElementsByClassName('close')[0];
 
+
 function Book(title, author, pages, read){
     this.title = title
     this.author = author
@@ -51,6 +52,7 @@ function createBookCard(book, index){
         readIcon.classList.add('hidden')
     }
     iconBox.append(readIcon,unreadIcon);
+    iconBox.addEventListener('click', function(){toggleReadStaus(this,index)});
     deleteBox = document.createElement('div');
     deleteBox.setAttribute('class','remove-container')
     deleteIcon = document.createElement('i');
@@ -98,6 +100,21 @@ function removeBook(bookIndex){
     if(confirm(`Are you sure you want to remove ${bookToRemove.title}?`)){
         myLibrary.splice(bookIndex,1);
         render();
+    }
+}
+
+function toggleReadStaus(iconBox,bookIndex){
+    readIcon = iconBox.childNodes[0];
+    unreadIcon = iconBox.childNodes[1];
+    if(myLibrary[bookIndex].read){
+        myLibrary[bookIndex].read = false;
+        readIcon.classList.add('hidden');
+        unreadIcon.classList.remove('hidden');
+    }
+    else{
+        myLibrary[bookIndex].read = true;
+        readIcon.classList.remove('hidden');
+        unreadIcon.classList.add('hidden');
     }
 }
 //inital books
