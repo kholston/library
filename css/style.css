@@ -109,12 +109,11 @@
 #bookshelf .bookCover {
   position: relative;
   padding: 10px;
+  border-radius: 5px;
   height: 100%;
   width: 70%;
-  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4);
-          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4);
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
+  -webkit-box-shadow: -4px 0px 4px grey, -4px 4px 4px grey, 0 4px 15px 0 rgba(0, 0, 0, 0.4);
+          box-shadow: -4px 0px 4px grey, -4px 4px 4px grey, 0 4px 15px 0 rgba(0, 0, 0, 0.4);
 }
 
 .readStatus {
