@@ -4,6 +4,8 @@
     align-items: center;
 }
 
+$primary-color : #628395;
+$secondary-color: #96897B;
 
 * {
     font-family: 'Alata', sans-serif;
@@ -17,10 +19,15 @@
 .flex-center{
     @include flex-center();
 }
+body{
+  background-color: $primary-color;
+}
 
 .function-buttons{
     button{
         padding: 10px;
+        background-color: #fff;
+        border: none;
     }
 }
 
@@ -93,15 +100,12 @@
     .bookCover{
         position: relative;
         padding: 10px;
-        
+        background-color: #fefefe;
         border-radius: 5px;
         height: 100%;
         width: 70%;
-        box-shadow:-4px 0px 4px grey, -4px 4px 4px grey, 
+        box-shadow:-4px 0px 4px $secondary-color, -4px 4px 4px $secondary-color, 
             0 4px 15px 0 rgba(0, 0, 0, 0.4);
-        
-
-        
     }
 }
 

@@ -20,8 +20,14 @@
           align-items: center;
 }
 
+body {
+  background-color: #628395;
+}
+
 .function-buttons button {
   padding: 10px;
+  background-color: #fff;
+  border: none;
 }
 
 #form-bg {
@@ -109,11 +115,12 @@
 #bookshelf .bookCover {
   position: relative;
   padding: 10px;
+  background-color: #fefefe;
   border-radius: 5px;
   height: 100%;
   width: 70%;
-  -webkit-box-shadow: -4px 0px 4px grey, -4px 4px 4px grey, 0 4px 15px 0 rgba(0, 0, 0, 0.4);
-          box-shadow: -4px 0px 4px grey, -4px 4px 4px grey, 0 4px 15px 0 rgba(0, 0, 0, 0.4);
+  -webkit-box-shadow: -4px 0px 4px #96897B, -4px 4px 4px #96897B, 0 4px 15px 0 rgba(0, 0, 0, 0.4);
+          box-shadow: -4px 0px 4px #96897B, -4px 4px 4px #96897B, 0 4px 15px 0 rgba(0, 0, 0, 0.4);
 }
 
 .readStatus {
